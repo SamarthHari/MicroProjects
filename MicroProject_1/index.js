@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 const middleware = require('./middleware.js');
+const server = require('./server');
 var app = express();
 const MongoClient = require('mongodb').MongoClient;
 app.use(bodyParser.urlencoded({extended:true}));
@@ -30,7 +31,7 @@ MongoClient.connect(url,{useUnifiedTopology: true,useNewUrlParser: true },(err,c
     })
 
 
-    app.post('/getStatus', middleware.checkToken, (req, res) => {
+    app.post('/getVentByStatus', middleware.checkToken, (req, res) => {
         db.collection(vent, function (err, collection) {
            collection.find({"status":req.body.cur}).toArray(function(err, para) {
             if(err) throw err;    
@@ -63,10 +64,10 @@ MongoClient.connect(url,{useUnifiedTopology: true,useNewUrlParser: true },(err,c
             db.collection(vent, function (err, collection) {
             
                 collection.update({"ventilatorId":req.body.ventid}, { $set: {"status" : req.body.ventstatus} },
-                                    function(err, result){
-                                        if(err) throw err;    
-                                            console.log('Document Updated Successfully');
-                                    });
+                        function(err, result){
+                                if(err) throw err;    
+                                    res.send('Document Updated Successfully');
+                    });
                 });
             });
             app.post('/addVent', middleware.checkToken, (req,res)=>
@@ -77,7 +78,7 @@ MongoClient.connect(url,{useUnifiedTopology: true,useNewUrlParser: true },(err,c
                     collection.insert({ "hId" :req.body.nid,
                     "ventilatorId" : req.body.nvid,
                     "status" : req.body.ns,
-                    "name" : req.body.nn})
+                    "name" : req.body.nn}).then(() =>{res.send("Added Succesfully")});
                 });
             });
             app.delete('/removeVent', middleware.checkToken, (req,res)=>
@@ -86,7 +87,7 @@ MongoClient.connect(url,{useUnifiedTopology: true,useNewUrlParser: true },(err,c
                 db.collection(vent,function(err,collection)
                 {
                     if(err) throw err;
-                    collection.remove({"ventilatorId":req.body.ventid});
+                    collection.remove({"ventilatorId":req.body.ventid}).then(() =>{res.send("Deleted Succesfully")});
                 });
             });
         });
