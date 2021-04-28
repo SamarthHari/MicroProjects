@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fashion Feet</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+ 
+</head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+		<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				<a class="nav-link" data-widget="pushmenu" href="#" role="button"> 
+                                           <i class="fas fa-bars"></i></a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+				<a href="/" class="nav-link"><i class="fas fa-home"></i>Home</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+		
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+			<a href="/" class="brand-link">
+			  <img src=""
+				   alt=""
+				   class="brand-image img-circle elevation-3">
+			  <span class="brand-text font-weight-light">Fashion Feet</span>
+			</a>
+			<!-- Sidebar -->
+			<div class="sidebar">
+			<!-- Sidebar Menu -->
+  <nav class="mt-2">
+	<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	  <li class="nav-item">
+		<a href="/add" class="nav-link">
+		  <i class="fas fa-cart-plus"></i>
+		  <p>Add Product</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/details" class="nav-link">
+			<i class="fas fa-database"></i>
+		  <p class="text">Sales Details</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/update" class="nav-link">
+			<i class="fas fa-upload"></i>
+		  <p class="text">Update Sales Details</p>
+		</a>
+	  </li>
+	  
+      
+	  
+	</ul>
+</nav>
+<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1>Fashion Feet Inventory Management</h1>
+			</section>
+			
+			<section class="content">
+				<div class="card ">
+                    <div class="card-header bg-info"><h4>Add product Stock</h4></div>
+                      <h3 class="card-title"></h3>
+
+                        <br>
+                        
+                    <div class="card-body " >
+						<form action="/added" method="POST">
+							<label>Product Id<br><input type="text" name="pid"   placeholder="Product Id" style="border-radius: 2px;">
+							</label>
+							<br>
+							<label >Brand<br><input type="text" name="brand"  placeholder="Brand" style="border-radius: 2px;"></label>
+							<br>
+							<label >Category<br><input type="text" name="category"  placeholder="Category" style="border-radius: 2px;"></label>
+							<br>
+							<label >Product Name<br><input type="text" name="pn"  placeholder="Product Name" style="border-radius: 2px;"></label><br>
+							<label >Size<br><input type="text" name="Size"  placeholder="Size" style="border-radius: 2px;"></label><br>
+							<label >Quantity<br><input type="number" name="qnty" placeholder="Quantity" style="border-radius: 2px;"></label><br>
+							<label >Cost Price<br><input type="number" name="cp"  placeholder="Cost Price" style="border-radius: 2px;"></label><br>
+							<label >Selling Price<br><input type="number" name="sp" placeholder="Selling Price" style="border-radius: 2px;"></label>
+			
+                    </div>
+
+					<div class="card-footer">
+						
+							<input class="btn btn-success" type="submit" value="Submit">     
+						<a href="/"><input class="btn btn-danger" style="margin-left:  40px;" type="button" value="Cancel"></a>
+						</form>
+					</div>
+                    
+                </div>
+			</section>
+		</div>
+		
+	</div>
+</body>
+</html>

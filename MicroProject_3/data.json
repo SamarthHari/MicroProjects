@@ -1,0 +1,41 @@
+[{
+        "Product ID": 508,
+        "Brand": "Bata",
+        "Category": "Shoes",
+        "Name": "Running shoes",
+        "Size": 7,
+        "Quantity": 20,
+        "Cost Price": 1200,
+        "Selling Price": 1600
+    },
+    {
+        "Product ID": 508,
+        "Brand": "Bata",
+        "Category": "Shoes",
+        "Name": "Running shoes",
+        "Size": 7,
+        "Quantity": 40,
+        "Cost Price": 1200,
+        "Selling Price": 1600
+    },
+    {
+        "Product ID": 508,
+        "Brand": "Bata",
+        "Category": "Shoes",
+        "Name": "Urike Cheppulu",
+        "Size": 7,
+        "Quantity": 60,
+        "Cost Price": 1200,
+        "Selling Price": 1600
+    },
+    {
+        "Product ID": 508,
+        "Brand": "Bata",
+        "Category": "Shoes",
+        "Name": "Running shoes",
+        "Size": 7,
+        "Quantity": 80,
+        "Cost Price": 1200,
+        "Selling Price": 1600
+    }
+]
