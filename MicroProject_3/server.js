@@ -90,7 +90,7 @@ MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, (e
     });
     app.post('/edited', (req, res) => {
         db.collection('Products').updateOne({
-            'Product ID': Number(req.body.pid)
+            'Product ID': req.body.pid
         }, {
             $set: {
                 'Quantity': Number(req.body.newq),
